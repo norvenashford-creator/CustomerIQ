@@ -1,10 +1,1 @@
 
-
-Blame
-5 lines (5 loc) · 72 Bytes
-fastapi>=0.110
-uvicorn>=0.29
-pydantic>=2.7
-pytest>=8.0
-httpx>=0.27
-   
