@@ -1,0 +1,69 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "CustomerIQ backend tests",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe -m pytest backend/tests",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Train CustomerIQ Gradient Boosting artifact",
+			"type": "shell",
+			"command": "d:\\CustomerIQ\\.venv\\Scripts\\python.exe backend/ml/train_customeriq_model.py",
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		}
+	]
+}

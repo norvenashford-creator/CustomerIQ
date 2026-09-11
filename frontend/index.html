@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CustomerIQ Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-wrap">
+        <div class="brand">
+          <span class="brand-icon">CIQ</span>
+          <div>
+            <span class="brand-kicker">CustomerIQ</span>
+            <span class="brand-title">Retention Intelligence</span>
+          </div>
+        </div>
+        <div class="brand-subtitle">Customer retention intelligence powered by behavioral data.</div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link active" href="#">Overview</a>
+        <a class="nav-link" href="#">Risk Distribution</a>
+        <a class="nav-link" href="#">Value vs Risk</a>
+        <a class="nav-link" href="#">Priority Customers</a>
+        <a class="nav-link" href="#">Customer Explorer</a>
+      </nav>
+
+      <section class="sidebar-panel">
+        <div class="panel-label">Retention Intelligence</div>
+        <div id="intelligence-summary" class="intelligence-summary">
+          Behavioral signals suggest intervention priority based on risk, spend, and recency.
+        </div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="topbar">
+        <div>
+          <div class="section-label">CustomerIQ</div>
+          <h1>Executive Dashboard</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn refresh-btn" id="refresh-btn">Refresh Data</button>
+        </div>
+      </section>
+
+      <section class="kpi-grid" id="kpi-grid"></section>
+
+      <section class="dashboard-grid">
+        <section class="panel risk-panel">
+          <div class="panel-title">
+            <span>Risk Distribution</span>
+            <span class="panel-meta" id="risk-meta"></span>
+          </div>
+          <div class="risk-bars" id="risk-bars"></div>
+        </section>
+
+        <section class="panel scatter-panel">
+          <div class="panel-title">
+            <span>Value vs Risk</span>
+            <span class="panel-meta">Revenue exposure</span>
+          </div>
+          <div class="chart-wrap">
+            <svg id="scatter-chart" viewBox="0 0 460 260" preserveAspectRatio="none"></svg>
+          </div>
+        </section>
+      </section>
+
+      <section class="dashboard-grid lower-grid">
+        <section class="panel priority-panel">
+          <div class="panel-title">
+            <span>Priority Customers</span>
+            <span class="panel-meta">Revenue exposure + churn</span>
+          </div>
+          <div class="table-wrap">
+            <table id="priority-table">
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Risk</th>
+                  <th>Risk %</th>
+                  <th>Monetary</th>
+                  <th>Revenue Exposure</th>
+                  <th>Recency</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="panel explorer-panel">
+        <div class="panel-title">
+          <span>Customer Explorer</span>
+          <span class="panel-meta">Filter, sort, paginate</span>
+        </div>
+
+        <div class="filter-bar">
+          <select id="risk-filter">
+            <option value="">All Risk Segments</option>
+            <option value="HIGH">HIGH</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="LOW">LOW</option>
+          </select>
+          <select id="sort-filter">
+            <option value="customer_id">Sort: Customer ID</option>
+            <option value="churn_probability">Sort: Churn Probability</option>
+            <option value="monetary">Sort: Monetary</option>
+            <option value="recency">Sort: Recency</option>
+            <option value="frequency">Sort: Frequency</option>
+            <option value="average_order_value">Sort: Average Order Value</option>
+            <option value="revenue_exposure">Sort: Revenue Exposure</option>
+          </select>
+          <input type="number" id="min-churn" min="0" max="1" step="0.01" placeholder="Min churn">
+          <input type="number" id="max-churn" min="0" max="1" step="0.01" placeholder="Max churn">
+          <button class="btn" id="apply-filter">Apply</button>
+        </div>
+
+        <div class="table-wrap explorer-table-wrap">
+          <table id="customer-table">
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Risk</th>
+                <th>Churn %</th>
+                <th>Monetary</th>
+                <th>Recency</th>
+                <th>Frequency</th>
+                <th>Revenue Exposure</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button class="btn" id="prev-page">Previous</button>
+          <span id="page-label">Page 1</span>
+          <button class="btn" id="next-page">Next</button>
+        </div>
+      </section>
+
+      <section class="panel detail-panel">
+        <div class="panel-title">
+          <span>Customer Detail</span>
+          <span class="panel-meta">Selected customer intelligence</span>
+        </div>
+        <div id="customer-detail" class="customer-detail">
+          <div class="empty-detail">Select a customer row to inspect behavior, spend, risk, and exposure.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
