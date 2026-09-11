@@ -1,0 +1,40 @@
+{
+  "model_name": "CustomerIQ Gradient Boosting Churn Risk Model",
+  "model_version": "v1.0.0",
+  "training_date": "2026-09-11",
+  "feature_list": [
+    "Frequency",
+    "Monetary",
+    "Recency",
+    "Customer Lifespan",
+    "Average Purchase Interval",
+    "Median Purchase Interval"
+  ],
+  "target": "observed_churn",
+  "validation_metrics": {
+    "accuracy": 0.688242,
+    "precision": 0.665899,
+    "recall": 0.667436,
+    "f1": 0.666667,
+    "roc_auc": 0.762583
+  },
+  "training_data_reference": "Data\\Processed\\customer_churn_analysis.csv",
+  "artifact_path": "Models\\customeriq_gradient_boosting_model.joblib",
+  "risk_thresholds": {
+    "HIGH": {
+      "operator": ">=",
+      "value": 0.7
+    },
+    "MEDIUM": {
+      "operator": "between",
+      "value_range": [
+        0.4,
+        0.7
+      ]
+    },
+    "LOW": {
+      "operator": "<",
+      "value": 0.4
+    }
+  }
+}
