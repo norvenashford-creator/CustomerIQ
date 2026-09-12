@@ -1,0 +1,7 @@
+{
+  "name": "CustomerIQ",
+  "description": "Customer Retention Intelligence system that uses behavioral customer data and a machine-learning churn model to identify at-risk customers and provide evidence-informed retention recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
